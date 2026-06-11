@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WB-sports | Personal Training & Revalidatie in Tilburg</title>
+<meta name="description" content="WB-sports Tilburg: personal training, small group training en Mylogenics-revalidatie door Werner Bulten. Word sterker dan ooit. Plan een gratis intake.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Spline+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ijzer:#22272C;        /* gietijzer: diep blauwgrijs */
+  --ijzer-2:#2C333A;
+  --krijt:#F2F0EA;        /* magnesium / krijt */
+  --krijt-dim:#D8D5CC;
+  --messing:#D9A441;      /* messing accent */
+  --messing-deep:#B07F23;
+  --staal:#5E707E;        /* staalblauw secundair */
+  --lijn:rgba(242,240,234,.14);
+  --lijn-licht:rgba(34,39,44,.14);
+  --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Spline Sans',sans-serif;
+  background:var(--ijzer);
+  color:var(--krijt);
+  font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--messing);color:var(--ijzer)}
+h1,h2,h3{font-family:'Archivo',sans-serif;line-height:1.02;text-transform:uppercase}
+.mono{font-family:'Spline Sans Mono',monospace}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ---------- eyebrow / labels ---------- */
+.eyebrow{
+  font-family:'Spline Sans Mono',monospace;
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--messing);display:flex;align-items:center;gap:14px;margin-bottom:22px;
+}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--messing)}
+
+/* ---------- barbell rule (signature divider) ---------- */
+.barbell{display:flex;align-items:center;gap:0;margin:0 auto;max-width:var(--maxw);padding:0 24px}
+.barbell .bar{flex:1;height:2px;background:var(--lijn)}
+.barbell .plates{display:flex;align-items:center;gap:4px;padding:0 6px}
+.barbell .plates i{display:block;width:5px;border-radius:2px;background:var(--messing)}
+.barbell .plates i:nth-child(1){height:26px;opacity:.45}
+.barbell .plates i:nth-child(2){height:36px;opacity:.75}
+.barbell .plates i:nth-child(3){height:46px}
+
+/* ---------- nav ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(34,39,44,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--lijn);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'Archivo',sans-serif;font-weight:900;font-size:1.25rem;letter-spacing:.02em;text-decoration:none;text-transform:uppercase}
+.logo span{color:var(--messing)}
+.nav-links{display:flex;gap:30px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;font-size:.92rem;color:var(--krijt-dim);transition:color .2s}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--krijt)}
+.btn{
+  display:inline-block;background:var(--messing);color:var(--ijzer);
+  font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;
+  letter-spacing:.06em;font-size:.85rem;text-decoration:none;
+  padding:13px 26px;border-radius:4px;transition:transform .15s,background .2s;border:none;cursor:pointer;
+}
+.btn:hover{background:#E7B95C;transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--krijt);outline-offset:2px}
+.btn-ghost{
+  background:transparent;color:var(--krijt);border:1.5px solid var(--lijn);
+}
+.btn-ghost:hover{background:rgba(242,240,234,.06);border-color:var(--krijt-dim)}
+.menu-toggle{display:none;background:none;border:none;color:var(--krijt);font-size:1.7rem;cursor:pointer;line-height:1}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  padding:96px 0 80px;
+  background:
+    radial-gradient(900px 500px at 85% -10%, rgba(217,164,65,.10), transparent 60%),
+    linear-gradient(180deg, var(--ijzer) 0%, #1C2125 100%);
+}
+.hero .wrap{position:relative;z-index:2}
+.hero-stack{font-weight:900;font-size:clamp(3.4rem,11vw,8.2rem);letter-spacing:-.01em}
+.hero-stack .w1{display:block;color:var(--krijt)}
+.hero-stack .w2{
+  display:block;color:transparent;
+  -webkit-text-stroke:2px var(--messing);
+}
+.hero-stack .w3{display:block;color:var(--krijt)}
+.hero-sub{
+  max-width:560px;margin-top:30px;color:var(--krijt-dim);font-size:1.08rem;
+}
+.hero-cta{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+.hero-meta{
+  margin-top:56px;display:flex;gap:36px;flex-wrap:wrap;
+  font-family:'Spline Sans Mono',monospace;font-size:.78rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--staal);
+}
+.hero-meta b{color:var(--krijt);font-weight:600;display:block;letter-spacing:.06em;font-size:.85rem;margin-bottom:2px}
+.plate-bg{
+  position:absolute;right:-160px;top:50%;transform:translateY(-50%);
+  width:560px;height:560px;border-radius:50%;
+  border:2px solid rgba(217,164,65,.12);z-index:1;pointer-events:none;
+}
+.plate-bg::before,.plate-bg::after{
+  content:"";position:absolute;inset:70px;border-radius:50%;
+  border:2px solid rgba(217,164,65,.09);
+}
+.plate-bg::after{inset:170px;border-color:rgba(217,164,65,.07)}
+
+/* ---------- sections ---------- */
+section{padding:96px 0}
+.sec-title{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;margin-bottom:18px}
+.sec-intro{max-width:640px;color:var(--krijt-dim)}
+.light{background:var(--krijt);color:var(--ijzer)}
+.light .sec-intro{color:#4A4F55}
+.light .eyebrow{color:var(--messing-deep)}
+.light .eyebrow::before{background:var(--messing-deep)}
+
+/* ---------- over ---------- */
+.over-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center;margin-top:10px}
+.portret{
+  aspect-ratio:4/5;border-radius:6px;position:relative;overflow:hidden;
+  background:
+    linear-gradient(160deg,#2E353C 0%,#1D2226 100%);
+  border:1px solid var(--lijn);
+  display:flex;align-items:flex-end;
+}
+.portret .ph{
+  width:100%;padding:18px;font-family:'Spline Sans Mono',monospace;
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--staal);
+  border-top:1px dashed var(--lijn);background:rgba(28,33,37,.6);
+}
+.portret::before{
+  content:"WB";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:'Archivo',sans-serif;font-weight:900;font-size:7rem;color:rgba(217,164,65,.08);
+}
+.over-tekst p{margin-bottom:18px;color:var(--krijt-dim)}
+.over-tekst p strong{color:var(--krijt)}
+.over-punten{list-style:none;margin-top:26px;display:grid;gap:12px}
+.over-punten li{display:flex;gap:12px;align-items:flex-start;color:var(--krijt-dim)}
+.over-punten li::before{
+  content:"";flex:0 0 10px;height:10px;margin-top:7px;
+  background:var(--messing);border-radius:2px;transform:rotate(45deg);
+}
+
+/* ---------- diensten ---------- */
+.diensten-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+.dienst{
+  background:#FBFAF7;border:1px solid var(--lijn-licht);border-radius:8px;
+  padding:34px 30px;display:flex;flex-direction:column;gap:14px;
+  transition:transform .2s,box-shadow .2s;position:relative;
+}
+.dienst:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(34,39,44,.12)}
+.dienst h3{font-size:1.25rem;font-weight:800}
+.dienst .tag{
+  font-family:'Spline Sans Mono',monospace;font-size:.68rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--messing-deep);
+}
+.dienst p{color:#4A4F55;font-size:.96rem}
+.dienst ul{list-style:none;display:grid;gap:8px;margin-top:4px}
+.dienst ul li{font-size:.93rem;color:#3A4046;display:flex;gap:10px}
+.dienst ul li::before{content:"+";color:var(--messing-deep);font-weight:700}
+.dienst .meer{margin-top:auto;padding-top:14px;font-weight:600;font-size:.9rem;color:var(--ijzer);text-decoration:none;border-top:1px solid var(--lijn-licht)}
+.dienst .meer:hover{color:var(--messing-deep)}
+.dienst.uitgelicht{background:var(--ijzer);color:var(--krijt);border-color:var(--ijzer)}
+.dienst.uitgelicht p{color:var(--krijt-dim)}
+.dienst.uitgelicht ul li{color:var(--krijt-dim)}
+.dienst.uitgelicht ul li::before{color:var(--messing)}
+.dienst.uitgelicht .tag{color:var(--messing)}
+.dienst.uitgelicht .meer{color:var(--krijt);border-top-color:var(--lijn)}
+.dienst.uitgelicht::after{
+  content:"Uniek in Tilburg";position:absolute;top:-13px;right:18px;
+  background:var(--messing);color:var(--ijzer);font-family:'Spline Sans Mono',monospace;
+  font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:5px 12px;border-radius:3px;font-weight:600;
+}
+
+/* ---------- rooster ---------- */
+.rooster{
+  margin-top:50px;border:1px solid var(--lijn);border-radius:8px;overflow:hidden;
+  font-family:'Spline Sans Mono',monospace;
+}
+.rooster-row{
+  display:grid;grid-template-columns:150px 1fr 1fr;
+  border-bottom:1px solid var(--lijn);
+}
+.rooster-row:last-child{border-bottom:none}
+.rooster-row.head{background:rgba(217,164,65,.08);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--messing)}
+.rooster-cell{padding:18px 20px;font-size:.88rem}
+.rooster-row.head .rooster-cell{padding:13px 20px}
+.rooster-cell.dag{color:var(--krijt);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;border-right:1px solid var(--lijn)}
+.rooster-cell .tijd{color:var(--messing)}
+.rooster-cell .leeg{color:var(--staal)}
+.rooster-note{margin-top:18px;font-size:.85rem;color:var(--staal)}
+
+/* ---------- prijzen ---------- */
+.prijzen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:50px}
+.prijs{
+  background:#FBFAF7;border:1px solid var(--lijn-licht);border-radius:8px;
+  padding:30px 26px;display:flex;flex-direction:column;gap:6px;
+}
+.prijs h3{font-size:1.02rem;font-weight:800}
+.prijs .bedrag{font-family:'Archivo',sans-serif;font-weight:900;font-size:2.1rem;margin:8px 0 2px}
+.prijs .bedrag small{font-size:.85rem;font-weight:500;font-family:'Spline Sans',sans-serif;color:#6A7077}
+.prijs .btw{font-family:'Spline Sans Mono',monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#8A9099;margin-bottom:12px}
+.prijs ul{list-style:none;display:grid;gap:8px;font-size:.9rem;color:#3A4046}
+.prijs ul li{display:flex;gap:9px}
+.prijs ul li::before{content:"+";color:var(--messing-deep);font-weight:700}
+.prijs .btn{margin-top:auto;text-align:center;margin-top:22px}
+.prijs.featured{border:2px solid var(--messing);position:relative}
+.prijs.featured::after{
+  content:"Meest gekozen";position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--messing);color:var(--ijzer);font-family:'Spline Sans Mono',monospace;
+  font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 12px;border-radius:3px;font-weight:600;white-space:nowrap;
+}
+
+/* ---------- reviews ---------- */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+.review{
+  background:var(--ijzer-2);border:1px solid var(--lijn);border-radius:8px;padding:30px 28px;
+  display:flex;flex-direction:column;gap:16px;
+}
+.review .sterren{color:var(--messing);letter-spacing:3px;font-size:.95rem}
+.review p{color:var(--krijt-dim);font-size:.97rem;font-style:italic}
+.review .wie{font-family:'Spline Sans Mono',monospace;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--staal);margin-top:auto}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;margin-top:50px;align-items:start}
+.contact-info dl{display:grid;gap:22px}
+.contact-info dt{font-family:'Spline Sans Mono',monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--messing-deep);margin-bottom:4px}
+.contact-info dd{font-size:1.02rem;color:#2C333A}
+.contact-info dd a{color:inherit;text-decoration:none;border-bottom:1.5px solid var(--messing);padding-bottom:1px}
+.contact-info dd a:hover{color:var(--messing-deep)}
+.wa{
+  display:inline-flex;align-items:center;gap:12px;margin-top:30px;
+  background:#1FAF55;color:#fff;text-decoration:none;font-weight:600;
+  padding:15px 26px;border-radius:6px;transition:transform .15s,filter .2s;
+}
+.wa:hover{transform:translateY(-2px);filter:brightness(1.07)}
+.wa svg{width:22px;height:22px;fill:#fff}
+.contact-form{
+  background:#FBFAF7;border:1px solid var(--lijn-licht);border-radius:8px;padding:34px 30px;
+}
+.contact-form h3{font-size:1.15rem;font-weight:800;margin-bottom:6px}
+.contact-form .sub{font-size:.92rem;color:#5A6066;margin-bottom:22px}
+.veld{margin-bottom:16px}
+.veld label{display:block;font-family:'Spline Sans Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#5A6066;margin-bottom:7px}
+.veld input,.veld textarea,.veld select{
+  width:100%;border:1.5px solid var(--lijn-licht);border-radius:5px;
+  padding:12px 14px;font-family:'Spline Sans',sans-serif;font-size:.95rem;
+  background:#fff;color:var(--ijzer);
+}
+.veld input:focus,.veld textarea:focus,.veld select:focus{outline:2.5px solid var(--messing);border-color:transparent}
+.contact-form .btn{width:100%;text-align:center}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--lijn);padding:50px 0 40px;background:#1C2125}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.foot .logo{font-size:1.05rem}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap;list-style:none}
+.foot-links a{font-size:.82rem;color:var(--staal);text-decoration:none}
+.foot-links a:hover{color:var(--krijt-dim)}
+.foot-copy{width:100%;margin-top:26px;font-family:'Spline Sans Mono',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--staal)}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.zichtbaar{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .btn,.wa,.dienst{transition:none}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .diensten-grid{grid-template-columns:1fr}
+  .prijzen-grid{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:1fr}
+  .over-grid{grid-template-columns:1fr;gap:40px}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .plate-bg{display:none}
+}
+@media (max-width:720px){
+  section{padding:72px 0}
+  .nav-links{
+    position:absolute;top:68px;left:0;right:0;
+    background:var(--ijzer);border-bottom:1px solid var(--lijn);
+    flex-direction:column;padding:20px 24px;gap:18px;align-items:flex-start;
+    display:none;
+  }
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  .prijzen-grid{grid-template-columns:1fr}
+  .rooster-row{grid-template-columns:110px 1fr}
+  .rooster-cell.c3{grid-column:2;border-top:1px dashed var(--lijn)}
+  .rooster-row.head .rooster-cell.c3{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">WB<span>-</span>SPORTS</a>
+    <button class="menu-toggle" aria-label="Menu openen" aria-expanded="false" onclick="toggleMenu(this)">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#over">Over Werner</a></li>
+      <li><a href="#diensten">Diensten</a></li>
+      <li><a href="#rooster">Rooster</a></li>
+      <li><a href="#prijzen">Prijzen</a></li>
+      <li><a href="#reviews">Ervaringen</a></li>
+      <li><a class="btn" href="#contact">Gratis intake</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="plate-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">Personal training &amp; revalidatie &mdash; Tilburg, De Blaak</p>
+    <h1 class="hero-stack">
+      <span class="w1">Sterk.</span>
+      <span class="w2">Weerbaar.</span>
+      <span class="w3">Fit.</span>
+    </h1>
+    <p class="hero-sub">
+      Bij WB-sports train je niet zomaar. Samen bouwen we doelgericht aan een sterker,
+      fitter en zelfverzekerder lichaam &mdash; van krachtopbouw tot herstel na een blessure.
+      Word sterker dan ooit.
+    </p>
+    <div class="hero-cta">
+      <a class="btn" href="#contact">Plan een gratis intake</a>
+      <a class="btn btn-ghost" href="#diensten">Bekijk de trainingen</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>1-op-1 &amp; small group</b>max 8 personen per groep</div>
+      <div><b>Mylogenics</b>revalidatie &amp; pijnverlichting</div>
+      <div><b>Voortgangsmeting</b>elke 4 weken meetbaar resultaat</div>
+    </div>
+  </div>
+</section>
+
+<div class="barbell" aria-hidden="true">
+  <div class="bar"></div>
+  <div class="plates"><i></i><i></i><i></i></div>
+  <div class="bar"></div>
+</div>
+
+<!-- OVER -->
+<section id="over">
+  <div class="wrap">
+    <div class="over-grid">
+      <div class="portret reveal">
+        <div class="ph">Foto: Werner Bulten &mdash; hier komt jullie eigen foto</div>
+      </div>
+      <div class="over-tekst reveal">
+        <p class="eyebrow">Over Werner</p>
+        <h2 class="sec-title">Jouw coach,<br>geen nummertje</h2>
+        <p>
+          Ik ben <strong>Werner Bulten</strong>, oprichter van WB-sports en specialist op het gebied van
+          training, voeding, herstel en revalidatie. Of je nu sterker wilt worden, je conditie wilt
+          verbeteren of wilt herstellen na een operatie of ziekte: ik ga er voor de volle 100% voor
+          om jouw doelen te realiseren.
+        </p>
+        <p>
+          Geen massale sportschool, maar persoonlijke aandacht. We bepalen samen je doelen,
+          stemmen het traject volledig op jou af en meten elke vier weken je voortgang.
+          Zo weet je zeker dat elke training telt.
+        </p>
+        <ul class="over-punten">
+          <li>Persoonlijke intake met heldere doelstellingen</li>
+          <li>Voedingsadvies en leefstijlcoaching inbegrepen</li>
+          <li>Specialist in Mylogenics: snel herstel bij blessures en pijnklachten</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIENSTEN -->
+<section id="diensten" class="light">
+  <div class="wrap">
+    <p class="eyebrow">Diensten</p>
+    <h2 class="sec-title">Drie manieren om<br>sterker te worden</h2>
+    <p class="sec-intro">Van exclusieve 1-op-1 begeleiding tot trainen in een kleine groep, en een unieke behandelmethode voor wie kampt met blessures of pijnklachten.</p>
+
+    <div class="diensten-grid">
+      <article class="dienst reveal">
+        <span class="tag">1-op-1</span>
+        <h3>Personal training</h3>
+        <p>Exclusiviteit op het hoogste niveau. Jij bepaalt samen met mij de invulling van het traject, met vooraf bepaalde en goed gekaderde doelen.</p>
+        <ul>
+          <li>Persoonlijke intake &amp; doelstelling</li>
+          <li>Voedingsadvies &amp; leefstijlcoaching</li>
+          <li>Voortgangsmeting elke 4 weken</li>
+          <li>Sterker worden, conditie, stressreductie</li>
+        </ul>
+        <a class="meer" href="#prijzen">Vanaf &euro;55 per uur &rarr;</a>
+      </article>
+
+      <article class="dienst reveal">
+        <span class="tag">Small group &middot; max 8</span>
+        <h3>Groepstraining</h3>
+        <p>Samen werken aan een gemeenschappelijk doel: krachtopbouw, conditie of lichaamstransformatie. Klein genoeg voor persoonlijke aandacht, groot genoeg voor extra motivatie.</p>
+        <ul>
+          <li>Vaste groepen: dames, heren &amp; gemengd</li>
+          <li>6 trainingsmomenten per week</li>
+          <li>Online coaching inbegrepen</li>
+          <li>Gratis 21-dagenprogramma bij start</li>
+        </ul>
+        <a class="meer" href="#rooster">Bekijk het rooster &rarr;</a>
+      </article>
+
+      <article class="dienst uitgelicht reveal">
+        <span class="tag">Revalidatie</span>
+        <h3>Mylogenics</h3>
+        <p>Binnen enkele minuten sporen we de zwakke schakels in je spier- en zenuwstelsel op. Het resultaat: snelle pijnverlichting en directe verbetering van je bewegingen.</p>
+        <ul>
+          <li>Bewezen bij hernia &amp; frozen shoulder</li>
+          <li>Tenniselleboog &amp; instabiele enkel</li>
+          <li>Behandeling vaak binnen 30 minuten</li>
+          <li>Met gericht trainingsschema voor herstel</li>
+        </ul>
+        <a class="meer" href="#contact">Plan een behandeling &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ROOSTER -->
+<section id="rooster">
+  <div class="wrap">
+    <p class="eyebrow">Trainingsrooster</p>
+    <h2 class="sec-title">Groepstrainingen<br>deze week</h2>
+    <p class="sec-intro">Elke groep telt maximaal 8 personen. Reserveer je plek via WhatsApp of het contactformulier.</p>
+
+    <div class="rooster reveal" role="table" aria-label="Trainingsrooster groepstrainingen">
+      <div class="rooster-row head" role="row">
+        <div class="rooster-cell dag" role="columnheader">Dag</div>
+        <div class="rooster-cell" role="columnheader">Training 1</div>
+        <div class="rooster-cell c3" role="columnheader">Training 2</div>
+      </div>
+      <div class="rooster-row" role="row">
+        <div class="rooster-cell dag" role="cell">Maandag</div>
+        <div class="rooster-cell" role="cell">Dames &mdash; <span class="tijd">19:00&ndash;20:00</span></div>
+        <div class="rooster-cell c3" role="cell">Heren &mdash; <span class="tijd">20:00&ndash;21:00</span></div>
+      </div>
+      <div class="rooster-row" role="row">
+        <div class="rooster-cell dag" role="cell">Woensdag</div>
+        <div class="rooster-cell" role="cell">Dames &mdash; <span class="tijd">19:00&ndash;20:00</span></div>
+        <div class="rooster-cell c3" role="cell">Heren &mdash; <span class="tijd">20:00&ndash;21:00</span></div>
+      </div>
+      <div class="rooster-row" role="row">
+        <div class="rooster-cell dag" role="cell">Vrijdag</div>
+        <div class="rooster-cell" role="cell">Gemengd &mdash; <span class="tijd">19:00&ndash;20:00</span></div>
+        <div class="rooster-cell c3" role="cell"><span class="leeg">&mdash;</span></div>
+      </div>
+      <div class="rooster-row" role="row">
+        <div class="rooster-cell dag" role="cell">Zaterdag</div>
+        <div class="rooster-cell" role="cell">Gemengd &mdash; <span class="tijd">10:00&ndash;11:00</span></div>
+        <div class="rooster-cell c3" role="cell"><span class="leeg">&mdash;</span></div>
+      </div>
+    </div>
+    <p class="rooster-note mono">Vol = vol &middot; max 8 deelnemers per training &middot; locatie: Roerpad, De Blaak, Tilburg</p>
+  </div>
+</section>
+
+<div class="barbell" aria-hidden="true">
+  <div class="bar"></div>
+  <div class="plates"><i></i><i></i><i></i></div>
+  <div class="bar"></div>
+</div>
+
+<!-- PRIJZEN -->
+<section id="prijzen" class="light">
+  <div class="wrap">
+    <p class="eyebrow">Prijzen</p>
+    <h2 class="sec-title">Helder &amp; eerlijk</h2>
+    <p class="sec-intro">Geen kleine lettertjes. Twijfel je wat bij je past? De intake is altijd gratis en vrijblijvend.</p>
+
+    <div class="prijzen-grid">
+      <article class="prijs reveal">
+        <h3>Personal training</h3>
+        <div class="bedrag">&euro;55<small>/uur</small></div>
+        <div class="btw">excl. btw</div>
+        <ul>
+          <li>1-op-1 begeleiding</li>
+          <li>Volledig op maat</li>
+          <li>Flexibel in te plannen</li>
+        </ul>
+        <a class="btn" href="#contact">Plan intake</a>
+      </article>
+
+      <article class="prijs reveal">
+        <h3>Groepstraining</h3>
+        <div class="bedrag">&euro;312</div>
+        <div class="btw">incl. btw &middot; 24 trainingen</div>
+        <ul>
+          <li>24 groepstrainingen</li>
+          <li>Online coaching</li>
+          <li>Gratis 21-dagenprogramma</li>
+        </ul>
+        <a class="btn" href="#contact">Meld je aan</a>
+      </article>
+
+      <article class="prijs featured reveal">
+        <h3>Package</h3>
+        <div class="bedrag">&euro;1331</div>
+        <div class="btw">incl. btw &middot; totaaltraject</div>
+        <ul>
+          <li>20 personal trainingen</li>
+          <li>Huidplooimeting</li>
+          <li>Voedingsschema op maat</li>
+          <li>Online coaching</li>
+        </ul>
+        <a class="btn" href="#contact">Start je traject</a>
+      </article>
+
+      <article class="prijs reveal">
+        <h3>Mylogenics</h3>
+        <div class="bedrag">&euro;50</div>
+        <div class="btw">excl. btw &middot; behandeling 30 min</div>
+        <ul>
+          <li>Snelle pijnverlichting</li>
+          <li>Directe bewegingsverbetering</li>
+          <li>Incl. trainingsadvies</li>
+        </ul>
+        <a class="btn" href="#contact">Plan behandeling</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <p class="eyebrow">Ervaringen</p>
+    <h2 class="sec-title">Wat klanten zeggen</h2>
+    <p class="sec-intro">Voorbeeldteksten &mdash; vervang deze door echte reviews van klanten (en koppel je Google Business-profiel).</p>
+
+    <div class="reviews-grid">
+      <article class="review reveal">
+        <div class="sterren" aria-label="5 van 5 sterren">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;Na maanden last van mijn schouder was ik na twee Mylogenics-behandelingen vrijwel pijnvrij. Had ik veel eerder moeten doen.&rdquo;</p>
+        <div class="wie">[Naam] &mdash; revalidatie</div>
+      </article>
+      <article class="review reveal">
+        <div class="sterren" aria-label="5 van 5 sterren">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;De groepstrainingen zijn pittig maar altijd haalbaar. Kleine groep, veel aandacht en je ziet echt resultaat.&rdquo;</p>
+        <div class="wie">[Naam] &mdash; groepstraining</div>
+      </article>
+      <article class="review reveal">
+        <div class="sterren" aria-label="5 van 5 sterren">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;Werner kijkt verder dan alleen de training: voeding, slaap, leefstijl. In 12 weken sterker en fitter dan ooit.&rdquo;</p>
+        <div class="wie">[Naam] &mdash; personal training</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="light">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2 class="sec-title">Plan je gratis intake</h2>
+    <p class="sec-intro">Stuur een appje of vul het formulier in. Je hoort binnen &eacute;&eacute;n werkdag van me.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <dl>
+          <div>
+            <dt>Locatie</dt>
+            <dd>Roerpad [huisnr.], De Blaak<br>[postcode] Tilburg</dd>
+          </div>
+          <div>
+            <dt>E-mail</dt>
+            <dd><a href="mailto:info@wb-sports.nl">info@wb-sports.nl</a></dd>
+          </div>
+          <div>
+            <dt>Telefoon / WhatsApp</dt>
+            <dd><a href="tel:+316XXXXXXXX">06 &ndash; XX XX XX XX</a></dd>
+          </div>
+          <div>
+            <dt>Volg WB-sports</dt>
+            <dd>
+              <a href="https://www.instagram.com/werner_bulten/" target="_blank" rel="noopener">Instagram</a> &nbsp;&middot;&nbsp;
+              <a href="https://www.facebook.com/WB-sports-1520238334873281/" target="_blank" rel="noopener">Facebook</a>
+            </dd>
+          </div>
+        </dl>
+        <a class="wa" href="https://wa.me/316XXXXXXXX?text=Hoi%20Werner%2C%20ik%20wil%20graag%20een%20gratis%20intake%20plannen!" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4 0-.5.2-.7l.5-.6c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3Z"/></svg>
+          App direct met Werner
+        </a>
+      </div>
+
+      <form class="contact-form reveal" action="mailto:info@wb-sports.nl" method="post" enctype="text/plain">
+        <h3>Of stuur een bericht</h3>
+        <p class="sub">Vertel kort wat je doel is, dan denk ik direct met je mee.</p>
+        <div class="veld">
+          <label for="naam">Naam</label>
+          <input type="text" id="naam" name="naam" required autocomplete="name">
+        </div>
+        <div class="veld">
+          <label for="email">E-mailadres</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="veld">
+          <label for="interesse">Waar heb je interesse in?</label>
+          <select id="interesse" name="interesse">
+            <option>Personal training</option>
+            <option>Groepstraining</option>
+            <option>Mylogenics / revalidatie</option>
+            <option>Weet ik nog niet</option>
+          </select>
+        </div>
+        <div class="veld">
+          <label for="bericht">Je bericht</label>
+          <textarea id="bericht" name="bericht" rows="4" required></textarea>
+        </div>
+        <button class="btn" type="submit">Verstuur bericht</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="logo" href="#top">WB<span>-</span>SPORTS</a>
+    <ul class="foot-links">
+      <li><a href="#">Algemene voorwaarden</a></li>
+      <li><a href="#">Privacyverklaring</a></li>
+      <li><a href="#">Impressum</a></li>
+      <li><a href="#">Cookie-instellingen</a></li>
+      <li><a href="#">Contract herroepen</a></li>
+    </ul>
+    <p class="foot-copy">&copy; 2026 WB-sports &middot; Roerpad, De Blaak, Tilburg &middot; KVK [nummer]</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(btn){
+  const nav=document.getElementById('navLinks');
+  const open=nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+}
+// Anker-links via JS afhandelen (werkt ook in previews/iframes)
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+  const id=a.getAttribute('href');
+  if(id.length>1){
+    const doel=document.querySelector(id);
+    if(doel){
+      e.preventDefault();
+      doel.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+    }
+  }else{
+    e.preventDefault();
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  document.getElementById('navLinks').classList.remove('open');
+  document.querySelector('.menu-toggle').setAttribute('aria-expanded','false');
+}));
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('zichtbaar');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
